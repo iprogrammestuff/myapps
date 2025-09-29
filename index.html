@@ -2,13 +2,90 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Apps</title>
+  <style>
+    /* Reset default styles */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 2em;
+    }
+
+    .apps-list {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+      gap: 15px;
+    }
+
+    .app-link {
+      display: block;
+      padding: 15px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      text-align: center;
+      transition: background-color 0.2s;
+      font-size: 1.2em;
+    }
+
+    .app-link:hover {
+      background-color: #45a049;
+    }
+
+    @media (min-width: 600px) {
+      .apps-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .app-link {
+        flex: 1 1 150px;
+      }
+    }
+  </style>
 </head>
 <body>
   <h1>Welcome to My Apps!</h1>
-  <ul>
-    <li><a href="app1/index.html">App 1</a></li>
-    <li><a href="app2/index.html">App 2</a></li>
-  </ul>
+  <div class="apps-list" id="appsList">
+    <!-- App links will be auto-inserted here -->
+  </div>
+
+  <script>
+    // List all your apps here
+    const apps = [
+      { name: "App 1", folder: "app1" },
+      { name: "App 2", folder: "app2" },
+      // Add new apps here
+      // { name: "App 3", folder: "app3" }
+    ];
+
+    const appsList = document.getElementById('appsList');
+
+    apps.forEach(app => {
+      const link = document.createElement('a');
+      link.href = `${app.folder}/index.html`;
+      link.textContent = app.name;
+      link.className = 'app-link';
+      appsList.appendChild(link);
+    });
+  </script>
 </body>
 </html>
