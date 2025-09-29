@@ -21,7 +21,6 @@
       min-height: 100vh;
     }
 
-    /* Dark overlay to help readability */
     body::before {
       content: '';
       position: fixed;
@@ -117,15 +116,20 @@
       margin-bottom: 15px;
     }
 
+    /* Screenshot carousel */
     .screenshots {
       display: flex;
       overflow-x: auto;
       gap: 10px;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 10px;
     }
 
     .screenshots img {
+      flex: 0 0 auto;
       height: 300px;
       border-radius: 10px;
+      scroll-snap-align: start;
     }
 
     @media (max-width: 600px) {
@@ -174,6 +178,9 @@
     <div class="screenshots">
       <img src="assets/idyplan_ss1.png" alt="IDYPLAN Screenshot 1">
       <img src="assets/idyplan_ss2.png" alt="IDYPLAN Screenshot 2">
+      <img src="assets/idyplan_ss3.png" alt="IDYPLAN Screenshot 3">
+      <img src="assets/idyplan_ss4.png" alt="IDYPLAN Screenshot 4">
+      <img src="assets/idyplan_ss5.png" alt="IDYPLAN Screenshot 5">
     </div>
   </div>
 
