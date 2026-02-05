@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IPROGRAMMESTUFF - Our Apps</title>
+  <title>IPROGRAMMESTUFF – NETBUILD</title>
+
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background-image: url('assets/bg3.png');
       background-size: cover;
       background-position: center;
@@ -15,16 +17,16 @@
       color: #fff;
       min-height: 100vh;
     }
+
     body::before {
       content: '';
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: rgba(0, 0, 0, 0.6);
       z-index: -1;
     }
+
+    /* Header */
     .header {
       background-color: rgba(0, 0, 0, 0.6);
       padding: 15px 20px;
@@ -36,39 +38,88 @@
       top: 0;
       z-index: 10;
     }
-    .logo { display: flex; align-items: center; gap: 10px; }
-    .logo img { height: 30px; }
-    .logo span { font-size: 1.2rem; font-weight: bold; text-transform: uppercase; }
-    .menu-icon { font-size: 1.5rem; cursor: pointer; }
-    .section-title { font-size: 2rem; padding: 20px; font-weight: bold; }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      height: 32px;
+    }
+
+    .logo span {
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-icon {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* Title */
+    .section-title {
+      font-size: 2rem;
+      padding: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    /* App Card */
     .app-card {
       background-color: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      margin: 20px;
+      margin: 20px auto;
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 12px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.5);
       max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
     }
-    .app-header { display: flex; align-items: center; gap: 15px; margin-bottom: 10px; }
-    .app-header img { width: 50px; height: 50px; border-radius: 12px; }
-    .app-name { font-size: 1.5rem; font-weight: bold; }
-    .app-description { margin: 10px 0; font-size: 1rem; }
+
+    .app-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 10px;
+    }
+
+    .app-header img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+    }
+
+    .app-name {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+
+    .app-description {
+      margin: 12px 0 18px;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #e6e6e6;
+    }
+
     .install-button {
       background-color: #1a73e8;
       color: white;
-      padding: 10px 20px;
+      padding: 10px 22px;
       border: none;
       border-radius: 6px;
       font-size: 1rem;
       cursor: pointer;
       margin-bottom: 15px;
     }
+
     .install-button:hover {
       background-color: #1669c1;
     }
+
+    /* Screenshots */
     .screenshots {
       display: flex;
       overflow-x: auto;
@@ -76,15 +127,18 @@
       scroll-snap-type: x mandatory;
       padding-bottom: 10px;
     }
+
     .screenshots img {
       flex: 0 0 auto;
       height: 300px;
-      border-radius: 10px;
+      border-radius: 12px;
       scroll-snap-align: start;
     }
+
+    /* Mobile */
     @media (max-width: 600px) {
       .app-card { padding: 15px; }
-      .app-name { font-size: 1.2rem; }
+      .app-name { font-size: 1.3rem; }
       .install-button { width: 100%; }
       .screenshots img { height: 200px; }
     }
@@ -95,57 +149,37 @@
   <!-- Header -->
   <div class="header">
     <div class="logo">
-      <img src="assets/logo.png" alt="logo">
+      <img src="assets/netbuild_logo.png" alt="NetBuild Logo">
       <span>IPROGRAMMESTUFF</span>
     </div>
     <div class="menu-icon">&#9776;</div>
   </div>
 
-  <!-- Section Title -->
-  <div class="section-title">Our Apps</div>
+  <!-- Title -->
+  <div class="section-title">Our App</div>
 
-  <!-- IDYPLAN App Card -->
+  <!-- NETBUILD App Card -->
   <div class="app-card">
     <div class="app-header">
-      <img src="assets/idyplan_icon.png" alt="IDYPLAN Icon">
-      <div class="app-name">IDYPLAN</div>
+      <img src="assets/netbuild_logo.png" alt="NetBuild Icon">
+      <div class="app-name">NETBUILD</div>
     </div>
-    <div class="app-description">
-      IDYPLAN helps you transform scattered ideas into structured, actionable plans. Capture thoughts quickly and watch them evolve into clear steps and achievable goals.
-    </div>
-    <!-- Install button linked to GitHub Release -->
-    <a href="https://github.com/iprogrammestuff/myapps/releases/download/v1.0/IDYPLAN.apk">
-      <button class="install-button">Install</button>
-    </a>
-    <div class="screenshots">
-      <img src="assets/idyplan_ss1.png" alt="IDYPLAN Screenshot 1">
-      <img src="assets/idyplan_ss2.png" alt="IDYPLAN Screenshot 2">
-      <img src="assets/idyplan_ss3.png" alt="IDYPLAN Screenshot 3">
-      <img src="assets/idyplan_ss4.png" alt="IDYPLAN Screenshot 4">
-      <img src="assets/idyplan_ss5.png" alt="IDYPLAN Screenshot 5">
-    </div>
-  </div>
 
-  <!-- ULTISTUDY App Card -->
-  <div class="app-card">
-    <div class="app-header">
-      <img src="assets/ultistudy_icon.png" alt="ULTISTUDY Icon">
-      <div class="app-name">ULTISTUDY</div>
-    </div>
     <div class="app-description">
-      ULTISTUDY is your ultimate study companion. Organize notes, track progress, and learn smarter with tools that keep you focused and motivated throughout your study journey.
+      NetBuild is a smart, minimal personal finance app that helps you stay in control of your money without the clutter of traditional finance tools.
+      Track transactions, write financial notes, and view your balance in real time — even offline. When you’re back online, NetBuild securely syncs your data so everything stays up to date.
+      Clean design, intelligent insights, and total clarity for your finances.
     </div>
-    <!-- Install button linked to GitHub Release -->
-    <a href="https://github.com/iprogrammestuff/myapps/releases/download/v1.0/ULTISTUDY.apk">
-      <button class="install-button">Install</button>
-    </a>
+
+    <!-- UI-only button -->
+    <button class="install-button">Install</button>
+
+    <!-- Screenshots -->
     <div class="screenshots">
-      <img src="assets/ultistudy_ss1.png" alt="ULTISTUDY Screenshot 1">
-      <img src="assets/ultistudy_ss2.png" alt="ULTISTUDY Screenshot 2">
-      <img src="assets/ultistudy_ss3.png" alt="ULTISTUDY Screenshot 3">
-      <img src="assets/ultistudy_ss4.png" alt="ULTISTUDY Screenshot 4">
-      <img src="assets/ultistudy_ss5.png" alt="ULTISTUDY Screenshot 5">
-      <img src="assets/ultistudy_ss6.png" alt="ULTISTUDY Screenshot 6">
+      <img src="assets/netbuild_ss1.jpg" alt="NetBuild Screenshot 1">
+      <img src="assets/netbuild_ss2.jpg" alt="NetBuild Screenshot 2">
+      <img src="assets/netbuild_ss3.jpg" alt="NetBuild Screenshot 3">
+      <img src="assets/netbuild_ss4.jpg" alt="NetBuild Screenshot 4">
     </div>
   </div>
 
