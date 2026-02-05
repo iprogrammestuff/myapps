@@ -61,6 +61,32 @@
       cursor: pointer;
     }
 
+    /* Dropdown menu */
+    .menu-dropdown {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: rgba(0,0,0,0.85);
+      border-radius: 8px;
+      padding: 10px 15px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      flex-direction: column;
+      gap: 10px;
+      z-index: 20;
+    }
+
+    .menu-dropdown a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+
+    .menu-dropdown a:hover {
+      color: #1a73e8;
+    }
+
     /* Title */
     .section-title {
       font-size: 2rem;
@@ -141,6 +167,10 @@
       .app-name { font-size: 1.3rem; }
       .install-button { width: 100%; }
       .screenshots img { height: 200px; }
+      .menu-dropdown {
+        right: 10px;
+        top: 55px;
+      }
     }
   </style>
 </head>
@@ -149,10 +179,18 @@
   <!-- Header -->
   <div class="header">
     <div class="logo">
-      <img src="assets/netbuild_logo.png" alt="NetBuild Logo">
+      <img src="assets/logo.png" alt="IPROGRAMMESTUFF Logo">
       <span>IPROGRAMMESTUFF</span>
     </div>
-    <div class="menu-icon">&#9776;</div>
+    <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+
+    <!-- Dropdown Menu -->
+    <div class="menu-dropdown" id="menuDropdown">
+      <a href="https://www.instagram.com/iprogrammestuff/" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@iprogrammestuff?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+      <a href="mailto:iprogrammestuff@gmail.com">Gmail</a>
+      <a href="https://buymeacoffee.com/iprogrammestuff" target="_blank">Buy Me a Coffee</a>
+    </div>
   </div>
 
   <!-- Title -->
@@ -182,6 +220,26 @@
       <img src="assets/netbuild_ss4.jpg" alt="NetBuild Screenshot 4">
     </div>
   </div>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuDropdown');
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+      }
+    }
+
+    // Close menu if clicking outside
+    window.addEventListener('click', function(e) {
+      const menu = document.getElementById('menuDropdown');
+      const icon = document.querySelector('.menu-icon');
+      if (!menu.contains(e.target) && !icon.contains(e.target)) {
+        menu.style.display = 'none';
+      }
+    });
+  </script>
 
 </body>
 </html>
