@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>IPROGRAMMESTUFF – NETBUILD</title>
+  <title>IPROGRAMMESTUFF – Apps</title>
 
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -80,7 +80,6 @@
       color: #fff;
       text-decoration: none;
       font-size: 1rem;
-      transition: color 0.2s;
     }
 
     .menu-dropdown a:hover {
@@ -130,19 +129,15 @@
       color: #e6e6e6;
     }
 
-    /* Install button as link */
     .install-button {
       background-color: #1a73e8;
       color: white;
       padding: 10px 22px;
-      border: none;
       border-radius: 6px;
       font-size: 1rem;
-      cursor: pointer;
-      margin-bottom: 15px;
       text-decoration: none;
       display: inline-block;
-      text-align: center;
+      margin-bottom: 15px;
     }
 
     .install-button:hover {
@@ -165,16 +160,9 @@
       scroll-snap-align: start;
     }
 
-    /* Mobile */
     @media (max-width: 600px) {
-      .app-card { padding: 15px; }
-      .app-name { font-size: 1.3rem; }
-      .install-button { width: 100%; }
+      .install-button { width: 100%; text-align: center; }
       .screenshots img { height: 200px; }
-      .menu-dropdown {
-        right: 10px;
-        top: 55px;
-      }
     }
   </style>
 </head>
@@ -188,19 +176,17 @@
     </div>
     <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
 
-    <!-- Dropdown Menu -->
     <div class="menu-dropdown" id="menuDropdown">
       <a href="https://www.instagram.com/iprogrammestuff/" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@iprogrammestuff?is_from_webapp=1&sender_device=pc" target="_blank">TikTok</a>
+      <a href="https://www.tiktok.com/@iprogrammestuff" target="_blank">TikTok</a>
       <a href="mailto:iprogrammestuff@gmail.com">Gmail</a>
       <a href="https://buymeacoffee.com/iprogrammestuff" target="_blank">Buy Me a Coffee</a>
     </div>
   </div>
 
-  <!-- Title -->
-  <div class="section-title">Our App</div>
+  <div class="section-title">Our Apps</div>
 
-  <!-- NETBUILD App Card -->
+  <!-- NETBUILD -->
   <div class="app-card">
     <div class="app-header">
       <img src="assets/netbuild_logo.png" alt="NetBuild Icon">
@@ -208,36 +194,52 @@
     </div>
 
     <div class="app-description">
-      NetBuild is a smart, minimal personal finance app that helps you stay in control of your money without the clutter of traditional finance tools.
-      Track transactions, write financial notes, and view your balance in real time — even offline. When you’re back online, NetBuild securely syncs your data so everything stays up to date.
-      Clean design, intelligent insights, and total clarity for your finances.
+      NetBuild is a smart, minimal personal finance app that helps you stay in control of your money.
+      Track transactions, write financial notes, and sync securely when online.
     </div>
 
-    <!-- Install button now uses GitHub Releases direct link -->
-    <a href="https://github.com/iprogrammestuff/myapps/releases/download/v1.0/netbuild.apk" 
-       class="install-button" 
+    <a href="https://github.com/iprogrammestuff/myapps/releases/download/v1.0/netbuild.apk"
+       class="install-button"
        download>Install</a>
 
-    <!-- Screenshots -->
     <div class="screenshots">
-      <img src="assets/netbuild_ss1.jpg" alt="NetBuild Screenshot 1">
-      <img src="assets/netbuild_ss2.jpg" alt="NetBuild Screenshot 2">
-      <img src="assets/netbuild_ss3.jpg" alt="NetBuild Screenshot 3">
-      <img src="assets/netbuild_ss4.jpg" alt="NetBuild Screenshot 4">
+      <img src="assets/netbuild_ss1.jpg">
+      <img src="assets/netbuild_ss2.jpg">
+      <img src="assets/netbuild_ss3.jpg">
+      <img src="assets/netbuild_ss4.jpg">
+    </div>
+  </div>
+
+  <!-- IDYPLAN -->
+  <div class="app-card">
+    <div class="app-header">
+      <img src="assets/idyplan_logo.png" alt="IDYPLAN Icon">
+      <div class="app-name">IDYPLAN</div>
+    </div>
+
+    <div class="app-description">
+      IDYPLAN is a focused planning and organization app built to help you structure ideas,
+      manage plans, and stay productive with clarity and simplicity.
+    </div>
+
+    <a href="https://github.com/iprogrammestuff/myapps/releases/download/v1.00/idyplan.apk"
+       class="install-button"
+       download>Install</a>
+
+    <div class="screenshots">
+      <img src="assets/idyplan_ss1.png">
+      <img src="assets/idyplan_ss2.png">
+      <img src="assets/idyplan_ss3.png">
+      <img src="assets/idyplan_ss4.png">
     </div>
   </div>
 
   <script>
     function toggleMenu() {
       const menu = document.getElementById('menuDropdown');
-      if (menu.style.display === 'flex') {
-        menu.style.display = 'none';
-      } else {
-        menu.style.display = 'flex';
-      }
+      menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
     }
 
-    // Close menu if clicking outside
     window.addEventListener('click', function(e) {
       const menu = document.getElementById('menuDropdown');
       const icon = document.querySelector('.menu-icon');
